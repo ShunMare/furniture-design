@@ -1,0 +1,39 @@
+@use '../../css/common/responsive' as *;
+
+.about-title {
+  margin: 30px 0;
+  @include respond(tablet-portrait) {
+    margin: 40px 0 30px;
+  }
+  p {
+    width: 40px;
+  }
+}
+
+.about-content {
+  div {
+    &:first-child {
+      margin-bottom: 40px;
+      @include respond(tablet-portrait) {
+        margin-bottom: 30px;
+      }
+    }
+
+    &:nth-child(2) {
+      margin-bottom: 467px;
+      @include respond(tablet-portrait) {
+        margin-bottom: 231px;
+      }
+    }
+
+    p {
+      width: 593px;
+      text-align: left;
+      line-height: 26px;
+      @include respond(tablet-portrait) {
+        width: auto;
+        height: auto;
+      }
+    }
+  }
+}

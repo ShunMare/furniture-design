@@ -1,0 +1,61 @@
+@use 'responsive' as *;
+
+.footer-content {
+  margin: 33px 0 12px;
+  @include respond(tablet-portrait) {
+    margin: 40px 0 20px;
+  }
+
+  &-more {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 56px;
+    @include respond(tablet-portrait) {
+      margin-bottom: 102px;
+    }
+
+    p {
+      white-space: nowrap;
+    }
+  }
+
+  &-info {
+    display: flex;
+    justify-content: space-between;
+    @include respond(tablet-portrait) {
+      display: block;
+    }
+
+    > div {
+      display: flex;
+      align-items: center;
+    }
+
+    &-sns {
+      display: flex;
+      li {
+        margin-right: 30px;
+    
+        &:nth-child(3) {
+          margin-right: 0;
+        }
+      }
+
+      p {
+        font-size: 12px;
+        line-height: 18px;
+      }
+    }
+
+    &-copyright {
+      @include respond(tablet-portrait) {
+        margin-top: 5px;
+      }
+
+      p {
+        font-size: 10px;
+        line-height: 15px;
+      }
+    }
+  }
+}

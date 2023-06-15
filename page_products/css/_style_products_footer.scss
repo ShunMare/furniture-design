@@ -1,0 +1,16 @@
+@use '../../css/common/responsive' as *;
+
+.footer-content {  
+  &-more {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 122px;
+    @include respond(tablet-portrait) {
+      margin-bottom: 102px;
+    }
+
+    p:first-child {
+      margin-right: 40px;
+    }
+  }
+}
