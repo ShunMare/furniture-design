@@ -1,0 +1,24 @@
+@use 'responsive' as *;
+@use 'define' as *;
+
+* {
+  box-sizing: border-box;
+}
+
+p {
+  font: normal normal normal 14px/21px Meiryo;
+  letter-spacing: 0px;
+  color: $global_color;
+  opacity: 1;
+  text-align: center;
+}
+
+.wrapper {
+  max-width: 1360px;
+  margin: 0 64px;
+  padding: 0 40px;
+  @include respond(tablet-portrait) {
+    margin: 0 40px;
+    padding: 0;
+  }
+}

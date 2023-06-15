@@ -1,0 +1,121 @@
+@use 'responsive' as *;
+@use 'define' as *;
+
+.header-content {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 0;
+  @include respond(tablet-portrait) {
+    padding: 27px 0;
+  }
+
+  &-logo {
+  a {
+      display: flex;
+      align-items: center; 
+      width: 180px;
+      height: 25px;
+    }
+  }
+
+  &-hamburger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 21px;
+    position: relative;
+    cursor: pointer;
+    z-index: 999;
+    
+    span {
+      display: inline-block;
+      margin: 4px 0;
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background-color: $global_color;
+      opacity: 1;
+      transition: all .5s;
+
+      &:nth-child(1) {
+        top: 2px;
+      }
+
+      &:nth-child(2) {
+        top: 10px;
+      }
+    }
+  }
+}
+
+#nav-global {
+  background: rgba(0, 0, 0, .8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 990;
+  visibility: hidden;
+  flex-direction: column;
+  font-size: 14px;
+  cursor: pointer;
+
+  nav {
+    width: 300px;
+    padding: 36px 50px;
+  }
+  
+  a {
+    display: block;
+    color: $global_color_white;
+    text-decoration: none;
+    padding-bottom: 14px;
+    
+    &:hover {
+      color: $global_color_hover;
+    }
+  }
+  
+  ul {
+    list-style: none;
+
+    li {
+      justify-content: flex-start;
+      transform: translateX(-20px);
+    }
+  }
+}
+
+.nav-global-active {
+  .header-content {
+    &-hamburger {
+      span {
+        &:nth-child(1) {
+          -webkit-transform: translateY(4px) rotate(-45deg);
+          transform: translateY(4px) rotate(-45deg);
+          background-color: $global_color_white;
+        }
+    
+        &:nth-child(2) {
+          -webkit-transform: translateY(-4px) rotate(45deg);
+          transform: translateY(-4px) rotate(45deg);
+          background-color: $global_color_white;
+        }
+      }
+    }
+  }
+
+  #nav-global {
+    visibility: visible;
+    opacity: 1;
+
+    li {
+      transform: translateX(10px);
+      transition:  all .5s;
+    }
+  }
+}

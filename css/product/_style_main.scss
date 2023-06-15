@@ -1,0 +1,25 @@
+@use '../common/responsive' as *;
+
+.furniture-content {
+  ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 33px;
+    margin-bottom: 40px;
+    @include respond(tablet-portrait) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  li {
+    p {
+      display: flex;
+      justify-content: flex-start;
+      font-size: 12px;
+      line-height: 18px;
+      @include respond(tablet-portrait) {
+        text-align: left;
+      }
+    }
+  }
+}

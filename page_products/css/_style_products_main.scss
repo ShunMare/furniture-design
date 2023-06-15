@@ -1,0 +1,18 @@
+@use '../../css/common/responsive' as *;
+
+.furniture-content {
+  p {
+    text-align: left;
+  }
+  
+  &-title {
+    margin: 30px 0;
+    @include respond(tablet-portrait) {
+      margin: 40px 0 30px;
+    }
+
+    p {
+      width: 58px;
+    }
+  }
+}
