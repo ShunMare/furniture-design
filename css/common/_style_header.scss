@@ -1,6 +1,12 @@
 @use 'responsive' as *;
 @use 'define' as *;
 
+header {
+  width: 100%;
+  position: fixed;
+  background-color: $global_color_white;
+}
+
 .header-content {
   height: 80px;
   display: flex;

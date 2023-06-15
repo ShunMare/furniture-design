@@ -28,6 +28,16 @@ body {
   }
 }
 
+main {
+  margin-top: 80px;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  background-color: #ffffff;
+}
+
 .header-content {
   height: 80px;
   display: flex;
