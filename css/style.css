@@ -185,6 +185,8 @@ p {
   cursor: pointer;
 }
 #nav-global nav {
+  position: fixed;
+  left: -300px;
   width: 300px;
   padding: 36px 50px;
 }
@@ -196,15 +198,6 @@ p {
 }
 #nav-global a:hover {
   color: #666666;
-}
-#nav-global ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-#nav-global ul li {
-  justify-content: flex-start;
-  transform: translateX(-20px);
 }
 
 .nav-global-active .header-content-hamburger span:nth-child(1) {
@@ -219,8 +212,8 @@ p {
   visibility: visible;
   opacity: 1;
 }
-.nav-global-active #nav-global li {
-  transform: translateX(10px);
+.nav-global-active #nav-global nav {
+  left: 0;
   transition: all 0.5s;
 }
 

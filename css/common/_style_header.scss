@@ -65,6 +65,8 @@
   cursor: pointer;
 
   nav {
+    position:fixed;
+    left: -300px;
     width: 300px;
     padding: 36px 50px;
   }
@@ -79,19 +81,7 @@
       color: $global_color_hover;
     }
   }
-  
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    li {
-      justify-content: flex-start;
-      transform: translateX(-20px);
-    }
-  }
 }
-
 .nav-global-active {
   .header-content {
     &-hamburger {
@@ -115,8 +105,8 @@
     visibility: visible;
     opacity: 1;
 
-    li {
-      transform: translateX(10px);
+    nav {
+      left: 0;
       transition:  all .5s;
     }
   }
