@@ -1,107 +1,4 @@
 @charset "UTF-8";
-/***
-    The new CSS reset - version 1.8.4 (last updated 14.2.2023)
-    GitHub page: https://github.com/elad2412/the-new-css-reset
-***/
-/*
-    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
-    - The "symbol *" part is to solve Firefox SVG sprite bug
- */
-*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
-  all: unset;
-  display: revert;
-}
-
-/* Preferred box-sizing value */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* Reapply the pointer cursor for anchor tags */
-a, button {
-  cursor: revert;
-}
-
-/* Remove list styles (bullets/numbers) */
-ol, ul, menu {
-  list-style: none;
-}
-
-/* For images to not be able to exceed their container */
-img {
-  max-inline-size: 100%;
-  max-block-size: 100%;
-}
-
-/* removes spacing between cells in tables */
-table {
-  border-collapse: collapse;
-}
-
-/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
-input, textarea {
-  -webkit-user-select: auto;
-}
-
-/* revert the 'white-space' property for textarea elements on Safari */
-textarea {
-  white-space: revert;
-}
-
-/* minimum style to allow to style meter element */
-meter {
-  -webkit-appearance: revert;
-  -moz-appearance: revert;
-       appearance: revert;
-}
-
-/* preformatted text - use only for this feature */
-:where(pre) {
-  all: revert;
-}
-
-/* reset default text opacity of input placeholder */
-::-moz-placeholder {
-  color: unset;
-}
-::placeholder {
-  color: unset;
-}
-
-/* remove default dot (•) sign */
-::marker {
-  content: initial;
-}
-
-/* fix the feature of 'hidden' attribute.
- display:revert; revert to element instead of attribute */
-:where([hidden]) {
-  display: none;
-}
-
-/* revert for bug in Chromium browsers
- - fix for the content editable attribute will work properly.
- - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
-:where([contenteditable]:not([contenteditable=false])) {
-  -moz-user-modify: read-write;
-  -webkit-user-modify: read-write;
-  overflow-wrap: break-word;
-  -webkit-line-break: after-white-space;
-  -webkit-user-select: auto;
-}
-
-/* apply back the draggable feature - exist only in Chromium and Safari */
-:where([draggable=true]) {
-  -webkit-user-drag: element;
-}
-
-/* Revert Modal native behavior */
-:where(dialog:modal) {
-  all: revert;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -222,6 +119,109 @@ body {
   transition: all 0.5s;
 }
 
+/***
+    The new CSS reset - version 1.8.4 (last updated 14.2.2023)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input, textarea {
+  -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  -moz-appearance: revert;
+       appearance: revert;
+}
+
+/* preformatted text - use only for this feature */
+:where(pre) {
+  all: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::-moz-placeholder {
+  color: unset;
+}
+::placeholder {
+  color: unset;
+}
+
+/* remove default dot (•) sign */
+::marker {
+  content: initial;
+}
+
+/* fix the feature of 'hidden' attribute.
+ display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+ - fix for the content editable attribute will work properly.
+ - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable=false])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable=true]) {
+  -webkit-user-drag: element;
+}
+
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+  all: revert;
+}
+
 .footer-content {
   margin: 33px 0 12px;
 }
@@ -279,6 +279,211 @@ body {
   line-height: 15px;
 }
 
+.footer-content-more {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 122px;
+}
+@media (max-width: 900px) {
+  .footer-content-more {
+    margin-bottom: 102px;
+  }
+}
+.footer-content-more p:first-child {
+  margin-right: 40px;
+}
+
+.about-title {
+  margin: 30px 0;
+}
+@media (max-width: 900px) {
+  .about-title {
+    margin: 40px 0 30px;
+  }
+}
+.about-title p {
+  width: 40px;
+}
+
+.about-content div:first-child {
+  margin-bottom: 40px;
+}
+@media (max-width: 900px) {
+  .about-content div:first-child {
+    margin-bottom: 30px;
+  }
+}
+.about-content div:nth-child(2) {
+  margin-bottom: 467px;
+}
+@media (max-width: 900px) {
+  .about-content div:nth-child(2) {
+    margin-bottom: 231px;
+  }
+}
+.about-content div p {
+  width: 593px;
+  text-align: left;
+  line-height: 26px;
+}
+@media (max-width: 900px) {
+  .about-content div p {
+    width: auto;
+    height: auto;
+  }
+}
+
+.company-title {
+  margin: 30px 0;
+}
+@media (max-width: 900px) {
+  .company-title {
+    margin: 40px 0 30px;
+  }
+}
+.company-title p {
+  width: 40px;
+}
+
+.company-content div {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  width: 600px;
+  border-bottom: 1px solid #DCDBDB;
+}
+@media (max-width: 900px) {
+  .company-content div {
+    display: block;
+    width: auto;
+  }
+}
+.company-content div:nth-child(6) {
+  display: flex;
+  align-items: flex-start;
+  border-bottom: none;
+}
+@media (max-width: 900px) {
+  .company-content div:nth-child(6) {
+    display: block;
+    width: auto;
+  }
+}
+.company-content div:last-child {
+  border-bottom: none;
+  margin-bottom: 177px;
+}
+@media (max-width: 900px) {
+  .company-content div:last-child {
+    margin-bottom: 136px;
+  }
+}
+.company-content div:last-child iframe {
+  width: 100%;
+  height: 300px;
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+.company-content div p {
+  text-align: left;
+}
+@media (max-width: 900px) {
+  .company-content div p {
+    padding-bottom: 10px;
+  }
+}
+.company-content div p:first-child {
+  width: 180px;
+}
+
+p {
+  text-align: left;
+}
+@media (max-width: 900px) {
+  p {
+    width: auto;
+    height: auto;
+  }
+}
+
+.item-title {
+  margin: 30px 0;
+}
+@media (max-width: 900px) {
+  .item-title {
+    margin: 40px 0 30px;
+  }
+}
+
+.item-content {
+  display: flex;
+}
+@media (max-width: 900px) {
+  .item-content {
+    display: block;
+  }
+}
+.item-content-img {
+  margin-right: 64px;
+  width: 400px;
+  height: 400px;
+  opacity: 1;
+}
+@media (max-width: 900px) {
+  .item-content-img {
+    display: flex;
+    justify-content: center;
+    margin-right: 0;
+    width: auto;
+    height: auto;
+  }
+}
+.item-content-description > div {
+  margin-bottom: 30px;
+}
+@media (max-width: 900px) {
+  .item-content-description > div:first-child {
+    margin-top: 40px;
+  }
+}
+.item-content-description-upper p, .item-content-description-bottom p {
+  width: 336px;
+}
+@media (max-width: 900px) {
+  .item-content-description-upper p, .item-content-description-bottom p {
+    width: auto;
+  }
+}
+.item-content-description-price p {
+  white-space: nowrap;
+  width: 80px;
+  font-size: 12px;
+  line-height: 18px;
+}
+.item-content-description-info-size, .item-content-description-info-color, .item-content-description-info-material {
+  display: flex;
+}
+.item-content-description-info-size p, .item-content-description-info-color p, .item-content-description-info-material p {
+  display: flex;
+  justify-content: flex-start;
+  white-space: nowrap;
+  width: 100px;
+  font-size: 12px;
+  line-height: 18px;
+}
+.item-content-description .item-back-product {
+  padding: 60px 0 90px;
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 900px) {
+  .item-content-description .item-back-product {
+    padding-bottom: 60px;
+  }
+}
+
 .furniture-content ul {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -300,4 +505,19 @@ body {
   .furniture-content li p {
     text-align: left;
   }
+}
+
+.furniture-content p {
+  text-align: left;
+}
+.furniture-content-title {
+  margin: 30px 0;
+}
+@media (max-width: 900px) {
+  .furniture-content-title {
+    margin: 40px 0 30px;
+  }
+}
+.furniture-content-title p {
+  width: 58px;
 }/*# sourceMappingURL=style.css.map */
