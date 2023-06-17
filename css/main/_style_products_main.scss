@@ -15,4 +15,17 @@
       width: 58px;
     }
   }
+
+  &-more {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 122px;
+    @include respond(tablet-portrait) {
+      margin-bottom: 102px;
+    }
+
+    p:nth-child(2) {
+      margin-left: 40px;
+    }
+  }
 }
