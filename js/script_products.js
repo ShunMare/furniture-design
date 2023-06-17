@@ -1,4 +1,4 @@
-if (window.location.pathname.endsWith('index.html')) {
+if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
   itemsPerPage = 8;
   localStorage.setItem('itemPageNo', -1);
   var start = 0;
