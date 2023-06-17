@@ -292,20 +292,6 @@ meter {
   line-height: 15px;
 }
 
-.footer-content-more {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 122px;
-}
-@media (max-width: 900px) {
-  .footer-content-more {
-    margin-bottom: 102px;
-  }
-}
-.footer-content-more p:first-child {
-  margin-right: 40px;
-}
-
 .about-title {
   margin: 30px 0;
 }
@@ -533,4 +519,17 @@ p {
 }
 .furniture-content-title p {
   width: 58px;
+}
+.furniture-content-more {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 122px;
+}
+@media (max-width: 900px) {
+  .furniture-content-more {
+    margin-bottom: 102px;
+  }
+}
+.furniture-content-more p:nth-child(2) {
+  margin-left: 40px;
 }/*# sourceMappingURL=style.css.map */
