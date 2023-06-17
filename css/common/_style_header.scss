@@ -1,6 +1,19 @@
 @use 'responsive' as *;
 @use 'define' as *;
 
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  background-color: $global_color_white;
+  max-width: 1360px;
+  margin: 0 64px;
+  padding: 0 40px;
+  @include respond(tablet-portrait) {
+    margin: 0 40px;
+  }
+}
+
 .header-content {
   height: 80px;
   display: flex;
