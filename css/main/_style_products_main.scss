@@ -16,6 +16,14 @@
     }
   }
 
+  a {
+    transition: all 0.5s;
+
+    &:hover {
+      opacity: .7;
+    }
+  }
+
   &-more {
     display: flex;
     justify-content: center;
