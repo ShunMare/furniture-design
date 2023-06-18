@@ -1,42 +1,32 @@
-if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
-  itemsPerPage = 8;
-  localStorage.setItem('itemPageNo', -1);
+function displayItemPages() {
+  var urlParams = new URLSearchParams(window.location.search);
+  var page = urlParams.get('page');
   var start = 0;
-  var end = start + itemsPerPage;
-} else {
-  itemsPerPage = 12;
-  const itemPageNo = localStorage.getItem('itemPageNo');
-  if (itemPageNo == -1) {
-    var start = 0;
+  if (page == null) {
+    localStorage.setItem('pageNo', 1);
+    itemsPerPage = 8;
   } else {
-    var start = itemPageNo * itemsPerPage;
+    localStorage.setItem('pageNo', page);
+    itemsPerPage = 12;
+    start = (page - 1) * itemsPerPage;
   }
   var end = start + itemsPerPage;
-  console.log(start, end);
-}
-displayItems(start, end);
-
-
-$('.footer-content-more a').on('click', function(e) {
-  if (isNaN($(this).text())) {
-    return;
-  }
-  e.preventDefault();
-  var pageNumber = $(this).text() - 1;
-  localStorage.setItem('itemPageNo', pageNumber);
-  var start = pageNumber * itemsPerPage;
-  var end = start + itemsPerPage;
-  $(".furniture-content ul").empty();
   displayItems(start, end);
+}
+
+$(document).ready(displayItemPages);
+
+$('.furniture-content-more a').on('click', function(e) {
+  displayItemPages();
 });
 
 function displayItems(start, end) {
   var itemsToDisplay = FURNITURE_ITEMS.slice(start, end);
   $.each(itemsToDisplay, function(index, product) {
     var ulElement = $(".furniture-content ul");
-    var liElement = $('<li>');
+    var liElement = $('<li>', {id: 'item' + product.id});
     var aElement = $('<a>', { href: 'item.html' });
-    var imgElement = $('<img>', { src: 'img/item' + product.id + '.jpg' });
+    var imgElement = $('<img>', { src: 'img/item' + product.id + '.jpg', alt: product.name });
     var pTitleElement = $('<p>', { text: product.name });
     var pPriceElement = $('<p>', { text: '¥' + product.price.toLocaleString() + ' +tax' });
     aElement.append(imgElement);
@@ -45,13 +35,8 @@ function displayItems(start, end) {
   });
 };
 
-$(".furniture-content ul").on("click", "a", function() {
-  const itemPageNo = localStorage.getItem('itemPageNo');
-  var selectedItemId;
-  if (itemPageNo == -1 || itemPageNo == 0) {
-    selectedItemId = $(this).parent().index();
-  } else if (itemPageNo == 1) {
-    selectedItemId = $(this).parent().index() + 12;
-  }
-  localStorage.setItem('selectedItem', FURNITURE_ITEMS[selectedItemId].id);
+$(".furniture-content ul").on("click", "a", function(event) {
+  var parentLiId = $(this).parent('li').attr('id');
+  var numericPart = parseInt(parentLiId.replace(/\D/g, '')) - 1;
+  localStorage.setItem('selectedItem', FURNITURE_ITEMS[numericPart].id);
 });

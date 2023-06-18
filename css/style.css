@@ -520,6 +520,12 @@ p {
 .furniture-content-title p {
   width: 58px;
 }
+.furniture-content a {
+  transition: all 0.5s;
+}
+.furniture-content a:hover {
+  opacity: 0.7;
+}
 .furniture-content-more {
   display: flex;
   justify-content: center;
